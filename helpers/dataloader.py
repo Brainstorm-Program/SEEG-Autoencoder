@@ -48,7 +48,7 @@ class Dataloader:
                 col_label = [col_label]
 
             # Get labels and data
-            dataset = torch.FloatTensor(df.to_numpy()[:, n_col_data])
+            dataset = torch.FloatTensor(df.iloc[:,n_col_data].to_numpy())
             n_labels = len(col_label) if col_label[0] != '' else 0
             labels = torch.zeros((dataset.shape[0], n_labels))
             if n_labels:
